@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+    # Outcomment this section if you don't want a Microsoft SQL server
+    mssqlServer:
+        container_name: mssqlServer
+        #image: mcr.microsoft.com/mssql/server:2019-GDR1-ubuntu-16.04
+        image: mcr.microsoft.com/mssql/server:2019-latest
+        restart: always
+        ports:
+            - "1433:1433"
+            - "135:135"
+            - "51000:51000"
+        environment:
+            ACCEPT_EULA: "Y"
+            SA_PASSWORD: "@12tf56so"
+            MSSQL_RPC_PORT: "135"
+            MSSQL_DTC_TCP_PORT: "51000"
+    # Outcomment this section if you don't want a MySQL (MariaDB) server
+    mariadb:
+        image: mariadb
+        #command: ['mysqld', '--default-authentication-plugin=mysql_native_password', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+        restart: always
+        container_name: mariadb
+        ports:
+            - "3306:3306"
+        environment:
+            MARIADB_ROOT_PASSWORD : 12tf56so
+            MARIADB_USER : builder
+            MARIADB_PASSWORD : 12tf56so
+            MARIADB_DATABASE : builder
+    # Outcomment this section if you don't want a Postgres server
+    postgres:
+        image: postgres
+        restart: always
+        environment:
+        container_name: postgres_container
+        environment:
+            POSTGRES_USER: root
+            POSTGRES_PASSWORD: 12tf56so
+        ports:
+            - "5432:5432"
+
