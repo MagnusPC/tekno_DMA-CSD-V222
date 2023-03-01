@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "5a00c86d-d692-443f-8d09-6af467bf8dce",
+		"name": "Telegram",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12753835"
+	},
+	"item": [
+		{
+			"name": "SendMessage",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "chat_id",
+							"value": "{{GroupId}}",
+							"type": "text"
+						},
+						{
+							"key": "text",
+							"value": "testolsen",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.telegram.org/bot{{AccessToken}}/sendMessage",
+					"protocol": "https",
+					"host": [
+						"api",
+						"telegram",
+						"org"
+					],
+					"path": [
+						"bot{{AccessToken}}",
+						"sendMessage"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetUpdates",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "https://api.telegram.org/bot{{AccessToken}}/getUpdates",
+					"protocol": "https",
+					"host": [
+						"api",
+						"telegram",
+						"org"
+					],
+					"path": [
+						"bot{{AccessToken}}",
+						"getUpdates"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
