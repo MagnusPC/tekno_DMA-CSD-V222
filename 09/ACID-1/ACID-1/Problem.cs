@@ -12,7 +12,7 @@ namespace ACID_1
 
     public class Problem
     {
-        private System.Data.IsolationLevel theIsolationLevel=System.Data.IsolationLevel.ReadUncommitted;
+        private System.Data.IsolationLevel theIsolationLevel=System.Data.IsolationLevel.RepeatableRead;
         private int customers = 2;
 
         /// <summary>

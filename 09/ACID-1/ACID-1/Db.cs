@@ -12,7 +12,8 @@ namespace ACID_1
     {
         SqlConnection connDB;
         SqlTransaction connTransaction = null;
-        string connectionString = "Data Source=127.0.0.1;Initial Catalog=xxx;Persist Security Info=True;User ID=sa;Password=@12tf56so;TrustServerCertificate=True";
+        string connectionString = "Data Source=localhost;Initial Catalog=xxx;Persist Security Info=True;User ID=sa;Password=bobdomain100;TrustServerCertificate=True";
+        //string connectionString = "Data Source=127.0.0.1;Initial Catalog=xxx;Persist Security Info=True;User ID=sa;Password=@12tf56so;TrustServerCertificate=True";
 
         public SqlTransaction BeginTransaction()
         {
